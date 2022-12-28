@@ -14,17 +14,18 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: const TextStyle(color: Colors.white),
       controller: controller,
       onChanged: onChangedFun,
-      cursorColor: Colors.black,
+      cursorColor: const Color.fromARGB(255, 127, 148, 203),
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: 'Search ...',
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey.withOpacity(0.2)),
+          borderSide: BorderSide(color: Theme.of(context).hintColor),
         ),
-        focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Theme.of(context).hintColor),
         ),
       ),
     );

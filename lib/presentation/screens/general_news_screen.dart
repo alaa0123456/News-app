@@ -15,7 +15,7 @@ class GeneralNews extends StatelessWidget {
       body:  BlocBuilder<ArticleCubit, ArticleState>(
           builder: (context, state) {
             if (state is ArticlIsLoading) {
-              return Center(child:LoadingAnimationWidget.hexagonDots(color: Colors.black, size: 70));
+              return Center(child:LoadingAnimationWidget.hexagonDots(color: Colors.white, size: 70));
             } else if (state is ArticlLoaded) {
               return SingleChildScrollView(
                 physics: const ScrollPhysics(),

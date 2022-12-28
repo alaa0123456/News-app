@@ -17,7 +17,7 @@ class SportsNews extends StatelessWidget {
           if (state is ArticlIsLoading) {
             return Center(
                 child: LoadingAnimationWidget.hexagonDots(
-                    color: Colors.black, size: 70));
+                    color: Colors.white, size: 70));
           } else if (state is ArticlLoaded) {
             return SingleChildScrollView(
               physics: const ScrollPhysics(),

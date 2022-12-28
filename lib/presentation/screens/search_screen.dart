@@ -31,12 +31,13 @@ class _SearchScreenState extends State<SearchScreen> {
       create: (context) =>
           ArticleCubit(ArticleRepo(ArticleService()))..getArticles(''),
       child: Scaffold(
+        
         body: BlocBuilder<ArticleCubit, ArticleState>(
           builder: (context, state) {
             if (state is ArticlIsLoading) {
               return Center(
                   child: LoadingAnimationWidget.hexagonDots(
-                      color: Colors.black, size: 70));
+                      color: Theme.of(context).primaryColor, size: 70));
             } else if (state is ArticlLoaded) {
               return SingleChildScrollView(
                 padding: const EdgeInsets.only(top: 70),
@@ -50,7 +51,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               onPressed: () {
                                 Navigator.pop(context);
                               },
-                              icon: const Icon(Icons.arrow_back)),
+                              icon:  Icon(Icons.arrow_back,color: Theme.of(context).primaryColor,)),
                           Flexible(
                             child: Padding(
                               padding: const EdgeInsets.only(right: 20),
@@ -68,9 +69,9 @@ class _SearchScreenState extends State<SearchScreen> {
                                           .read<ArticleCubit>()
                                           .searchClear(controller);
                                     },
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.clear,
-                                      color: Colors.grey,
+                                      color: Theme.of(context).hintColor,
                                     )),
                               ),
                             ),

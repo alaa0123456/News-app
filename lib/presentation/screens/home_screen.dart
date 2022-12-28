@@ -55,9 +55,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           preferredSize: const Size.fromHeight(80),
           child: AppBar(
             bottom: TabBar(
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey[400],
-                indicatorColor: Colors.transparent,
+              padding: const EdgeInsets.all(10),
+                labelColor: Colors.white,
+                unselectedLabelColor: const Color.fromARGB(255, 76, 92, 134),
+                indicatorColor: Theme.of(context).scaffoldBackgroundColor, 
                 controller: tabController,
                 tabs: const [
                   Text('General', style: TextStyle(fontSize: 18)),

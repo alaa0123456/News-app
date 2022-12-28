@@ -23,7 +23,7 @@ class ArticleDetails extends StatelessWidget {
               Positioned(
                   top: 0,
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.5,
+                  height: MediaQuery.of(context).size.height * 0.7,
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.5,
                     decoration: BoxDecoration(
@@ -37,41 +37,46 @@ class ArticleDetails extends StatelessWidget {
                                 fit: BoxFit.cover)),
                   )),
               Positioned(
-                  top: MediaQuery.of(context).size.height * 0.4,
+                  top: MediaQuery.of(context).size.height * 0.6,
                   height: MediaQuery.of(context).size.height * 0.6,
                   width: MediaQuery.of(context).size.width,
                   child: Container(
                     padding: const EdgeInsets.all(30),
                     height: MediaQuery.of(context).size.height * 0.6,
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
+                    decoration:  BoxDecoration(
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40),
                         )),
-                    child: Column(
-                      children: [
-                        Text(
-                          articles.title.toString(),
-                          style: Theme.of(context).textTheme.headline3,
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          articles.content.toString(),
-                          maxLines: 10,
-                          overflow: TextOverflow.fade,
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                        TextButton(
-                            onPressed: () {
-                              context
-                                  .read<ArticleCubit>()
-                                  .lancher(articles.url.toString());
-                            },
-                            child: const Text('Read more'))
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: Column(
+                        
+                        children: [
+                          Text(
+                            articles.title.toString(),
+                            style: Theme.of(context).textTheme.headline3,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            articles.content.toString(),
+                            maxLines: 10,
+                            overflow: TextOverflow.fade,
+                            style: Theme.of(context).textTheme.headline4,
+                          ), 
+                          
+                          TextButton(
+                              onPressed: () {
+                                context
+                                    .read<ArticleCubit>()
+                                    .lancher(articles.url.toString());
+                              },
+                              child: const Text('Read more'))
+                        ],
+                      ),
                     ),
                   )),
             ],
