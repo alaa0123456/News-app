@@ -29,7 +29,7 @@ class SportsNews extends StatelessWidget {
                           const EdgeInsets.only(right: 40, left: 40, top: 15),
                       child: Text(
                         'Braeking News',
-                        style: Theme.of(context).textTheme.headline2,
+                        style: Theme.of(context).textTheme.labelMedium,
                       ),
                     ),
                     ListView.builder(

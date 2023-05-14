@@ -56,7 +56,7 @@ class ArticleDetails extends StatelessWidget {
                         children: [
                           Text(
                             articles.title.toString(),
-                            style: Theme.of(context).textTheme.headline3,
+                            style: Theme.of(context).textTheme.labelSmall,
                           ),
                           const SizedBox(
                             height: 10,
@@ -65,7 +65,7 @@ class ArticleDetails extends StatelessWidget {
                             articles.content.toString(),
                             maxLines: 10,
                             overflow: TextOverflow.fade,
-                            style: Theme.of(context).textTheme.headline4,
+                            style: Theme.of(context).textTheme.titleLarge,
                           ), 
                           
                           TextButton(

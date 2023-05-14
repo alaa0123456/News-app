@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
             backgroundColor: Colors.transparent, elevation: 0),
         textTheme: const TextTheme(
-            headline1: TextStyle(
+            labelLarge: TextStyle(
                 color: Color(0xFF111a2e), fontWeight: FontWeight.bold, fontSize: 18),
-            headline2: TextStyle(
+            labelMedium: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
-            headline3: TextStyle(
+            labelSmall: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-            headline4: TextStyle(color: Color.fromARGB(255, 76, 92, 134), fontSize: 18)),
+            titleLarge: TextStyle(color: Color.fromARGB(255, 76, 92, 134), fontSize: 18)),
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter().generateRoute,
